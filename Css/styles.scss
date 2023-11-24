@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800&display=swap');
+$bg:#222;
+$fc:#eee;
+$drumBg:#ff930f;
+$drumFc:#fff;
+
+
+@mixin FlexCenter(){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    color:$fc;
+    font-size:10pt;
+    font-family: 'Work Sans', sans-serif;
+    @include FlexCenter();
+    background: hsla(11, 100%, 97%, 1);
+
+    background: linear-gradient(90deg, hsla(11, 100%, 97%, 1) 0%, hsla(329, 74%, 89%, 1) 50%, hsla(338, 57%, 97%, 1) 100%);
+    
+    background: -moz-linear-gradient(90deg, hsla(11, 100%, 97%, 1) 0%, hsla(329, 74%, 89%, 1) 50%, hsla(338, 57%, 97%, 1) 100%);
+    
+    background: -webkit-linear-gradient(90deg, hsla(11, 100%, 97%, 1) 0%, hsla(329, 74%, 89%, 1) 50%, hsla(338, 57%, 97%, 1) 100%);
+
+}
+
+
+.Container{
+    width: 850px;
+    height:500px;
+    @include FlexCenter();
+    z-index: 1;
+    border-radius: 5px;
+    background: rgb(247, 242, 240);
+}
+.ellipseOne{ 
+    width: 350px;
+    height:270px;
+    background:$drumBg;
+    clip-path: ellipse(25% 8% at 50% 50%);
+}
+
+.ellipseTwo{ 
+    width: 350px;
+    height:270px;
+    background:$drumBg;
+    clip-path: ellipse(25% 8% at 50% 50%);
+}
+
+
+
+.divDrum{
+    position: relative;
+    width: 200px;
+    height: 260px;
+    background-color: $drumBg;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    z-index: 4;
+}
+
+.divDrum::before{
+    position: absolute;
+    content: "";
+    top: -135px;
+    left: -100px;
+    width: 400px;
+    height: 270px;
+    background: rgb(245, 245, 245);
+    -webkit-clip-path: ellipse(25% 8% at 50% 50%);
+    clip-path: ellipse(25% 8% at 50% 50%);
+}
+
+.divDrum::after{
+    position: absolute;
+    content: "";
+    top: -138px;
+    left: -99px;
+    width: 398px;
+    height: 270px;
+    background: $drumBg;
+    -webkit-clip-path: ellipse(25% 8% at 50% 50%);
+    clip-path: ellipse(25% 8% at 50% 50%);
+}
+
+.DrumBottom{
+    position: absolute;
+    content: "";
+    bottom: -125px;
+    left: -100px;
+    width: 400px;
+    height: 270px;
+    background: $drumBg;
+    -webkit-clip-path: ellipse(25% 8% at 50% 50%);
+    clip-path: ellipse(25% 8% at 50% 50%);
+    z-index: 4;
+}
+
+.spCenter{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color:#222;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.DivRouteToReducer{
+    position: absolute;
+    top:45%;
+    left: 50%;
+    width: 300px;
+    height: 260px;
+    background-color: transparent;
+    border-radius: 10px;
+    border:5px solid rgb(21, 22, 21);
+    z-index: 2;
+}
+
+.divReducer{
+    position: absolute;
+    top:55%;
+    left: 67%;
+    width: 140px;
+    height: 140px;
+    background-color: rgb(143, 6, 143);
+    border-radius: 10px;
+    z-index: 4;
+    @include FlexCenter();
+}
+
+.spReducer{
+color:#eee;
+}
+
+.divReducer::before{
+position: absolute;
+content: '';
+top:-30px;
+left: calc(50% - 17px);
+width: 20px;
+height: 20px;
+border-left: 5px solid #222;
+border-bottom: 5px solid #222;
+transform: rotate(-45deg);
+z-index: 2;
+border-top-left-radius: 5px;
+border-bottom-right-radius: 5px;
+}
+
+.DivRouteToReducer::after{
+    position: absolute;
+    content: '';
+    bottom: -14px;
+    left: calc(50% - 17px);
+width: 20px;
+height: 20px;
+border-left: 5px solid #222;
+border-bottom: 5px solid #222;
+transform: rotate(45deg);
+border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.DivLeftArrow{
+    position: absolute;
+    top: 35%;
+    left: 30%;
+    width: 200px;
+    height: 160px;
+    border-top-left-radius: 10px;
+    border-top: 5px solid rgb(21, 22, 21);
+    border-left: 5px solid rgb(21, 22, 21);
+    z-index: 2;
+}
+
+.DivLeftArrow::before{
+    position: absolute;
+    content: '';
+    top: 130px;
+    left: -7.5%;
+    width: 20px;
+    height: 20px;
+    border-left: 5px solid #222;
+    border-bottom: 5px solid #222;
+    transform: rotate(-45deg);
+    z-index: 2;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.DivLeftArrow::after{
+    position: absolute;
+    content: "UI Layer";
+    top: 160px;
+    left: -41%;
+    width: 150px;
+    height: 90px;
+    border-radius: 5px;
+    background-color: #ff5858;
+    @include FlexCenter();
+
+}
+
+.DivSampleTitle{
+    position: absolute;
+    top:15%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color:#cfcacac0;
+    font-size:1.8em;
+    font-weight: 800;
+    text-transform: uppercase;
+}
